@@ -1,0 +1,24 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- M Symbol -->
+  <g id="m-symbol">
+    <!-- Left side of M -->
+    <path d="M60 50h40l20 100V50h40v200H120l-20-100v100H60V50z" fill="#4f4f8a"/>
+    
+    <!-- Right side of M -->
+    <path d="M240 50h-40l-20 100V50h-40v200h40l20-100v100h40V50z" fill="#4f4f8a"/>
+    
+    <!-- Gold accents -->
+    <path d="M140 100l20-50h40l-40 100z" fill="#cfa869"/>
+    <path d="M160 100l-20-50h-40l40 100z" fill="#cfa869"/>
+  </g>
+  
+  <!-- Text MAGNO -->
+  <text x="150" y="240" font-family="Mosk Ultra-Bold" font-size="48" fill="#4f4f8a" text-anchor="middle">
+    MAGNO
+  </text>
+  
+  <!-- Text CAPITAL -->
+  <text x="150" y="270" font-family="Mosk Extra-Bold" font-size="24" fill="#4f4f8a" text-anchor="middle">
+    CAPITAL
+  </text>
+</svg>
