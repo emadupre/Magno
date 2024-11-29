@@ -25,12 +25,17 @@
     </style>
 </head>
 <body>
+
+    <div class="loader-wrapper" id="loader">
+        <div class="text">Magno</div>
+    </div>
+
+
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-left">
                 <a href="/" class="logo">
-                    <span class="logo-magno">Magno</span>
-                    <span class="logo-capital">Capital</span>
+                    <img id="nav-logo" src="src/LOGO-HORIZONTAL-PNG-A-COLOR.png" alt="LOGO CAPITAL">
                 </a>
                 <div class="nav-links">
                     <a href="#nosotros">Nosotros</a>
@@ -51,20 +56,19 @@
         <section id="home" class="hero">
             <div class="hero-container">
                 <div class="hero-content">
-                    <h1>
-                        Invertir es para <span class="highlight">todos</span>
+                    <h1>Soluciones financieras del <span class="highlight">futuro</span>
                     </h1>
                     <p class="hero-text">
-                        Empezá a operar a través de <span class="brand">Magno</span>.
+                        Servicios <span class="brand">financieros</span> innovadores para tus necesidades.
                         <br>
-                        Unos pocos clicks y estás potenciando tus ahorros.
+                        Cambio de divisas, criptomonedas y más.
                     </p>
                     <p class="hero-tagline">
                         FÁCIL, INCLUSIVO Y SEGURO.
                     </p>
                     <div class="hero-cta">
                         <button class="primary-btn">
-                            Contactanos
+                            Conoce nuestros servicios ->
                         </button>
                     </div>
                 </div>
@@ -153,90 +157,69 @@
             </div>
         </section>
 
-        <section id="cards">
-            <div class="space space--small"></div>
-                <div class="cards">
-                    <div class="card" data-index="0">
-                        <div class="card__inner">
-                            <div class="card__image-container">
-                                <img class="card__image" src="src/mision.jpeg" alt="" />
+        <section class="creative-cards style-one">
+            <div class="container">
+                <div class="row">
+                    <div class="card-column">
+                        <div class="card-details">
+                            <div class="card-icons">
+                                <img class="light-icon" src="src/mission.png" alt="icon" />
                             </div>
-                            <div class="card__content">
-                                <h1 class="card__title">Misión</h1>
-                                <p class="card__description">En Magno creemos que invertir es para todos por eso ofrecemos una experiencia 100% digital, fácil y segura para que todos puedan realizar sus inversiones, proteger sus ahorros, hacer crecer su patrimonio y lograr la libertad financiera que se merecen.</p>
-                            </div>
+                            <h3><a href="https://www.fiverr.com/aliali44">Misión</a></h3>
+                            <p>En Magno creemos que invertir es para todos por eso ofrecemos una experiencia 100% digital, fácil y segura para que todos puedan realizar sus inversiones, proteger sus ahorros, hacer crecer su patrimonio y lograr la libertad financiera que se merecen.</p>
+                            <a class="read-more-btn" href=""><i class="fa-solid fa-angles-right"></i></a>
                         </div>
                     </div>
-                    <div class="card" data-index="0">
-                        <div class="card__inner">
-                            <div class="card__image-container">
-                                <img class="card__image" src="src/educacion.jpg" alt="" />
+                    <div class="card-column">
+                        <div class="card-details">
+                            <div class="card-icons">
+                                <img class="light-icon" src="src/finance.png" alt="icon" />
                             </div>
-                            <div class="card__content">
-                                <h1 class="card__title">Ponemos la educación primero</h1>
-                                <p class="card__description">Fomentamos la educación financiera a través de contenido gratuito y relevante para que nadie se quede afuera.</p>
-                            </div>
+                            <h3><a href="">Finanzas</a></h3>
+                            <p>Vinimos a romper con el status-quo persiguiendo nuestro sueño de agrandar el mercado de capitales y democratizar el acceso al mundo de las inversiones para cada uno.</p>
+                            <a class="read-more-btn" href=""><i class="fa-solid fa-angles-right"></i></a>
                         </div>
                     </div>
-                    <div class="card" data-index="0">
-                        <div class="card__inner">
-                            <div class="card__image-container">
-                                <img class="card__image" src="src/finanzas.jpg" alt="" />
+                    <div class="card-column">
+                        <div class="card-details">
+                            <div class="card-icons">
+                                <img class="light-icon" src="src/team.png" alt="icon" />
                             </div>
-                            <div class="card__content">
-                                <h1 class="card__title">Buscamos libertad financiera</h1>
-                                <p class="card__description">Vinimos a romper con el status-quo persiguiendo nuestro sueño de agrandar el mercado de capitales y democratizar el acceso al mundo de las inversiones para cada uno.</p>
-                            </div>
+                            <h3><a href="">Equipo</a></h3>
+                            <p>Trabajando con un equipo de primera línea, compuesto por los mejores profesionales en su ámbito de aplicación y poniendo siempre al consumidor en el centro.</p>
+                            <a class="read-more-btn" href=""><i class="fa-solid fa-angles-right"></i></a>
                         </div>
                     </div>
-                    <div class="card" data-index="0">
-                        <div class="card__inner">
-                            <div class="card__image-container">
-                                <img class="card__image" src="src/equipo2.jpg" alt="" />
-                            </div>
-                            <div class="card__content">
-                                <h1 class="card__title">Equipo</h1>
-                                <p class="card__description">Trabajando con un equipo de primera línea, compuesto por los mejores profesionales en su ámbito de aplicación y poniendo siempre al consumidor en el centro.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-
+                </div>
             </div>
-    <div class="space"></div>
-</section>
-<footer id="contacto" class="footer">
-    <div class="footer__container">
-      <div class="footer__section">
-        <h3 class="footer__title">Sobre Nosotros</h3>
-        <p class="footer__text">
-          Dedicados a satisfacer la necesidad del cliente.
-        </p>
-      </div>
-      <div class="footer__section">
-        <h3 class="footer__title">Quick Links</h3>
-        <ul class="footer__links">
-          <li><a href="#home" class="footer__link">Inicio</a></li>
-          <li><a href="#" class="footer__link">Servicios</a></li>
-          <li><a href="#contacto" class="footer__link">Contacto</a></li>
-          <li><a href="#" class="footer__link">Politicas de Privacidad</a></li>
-        </ul>
-      </div>
-      <div class="footer__section">
-        <h3 class="footer__title">Contacto</h3>
-        <p class="footer__text">Email: info@ejemplo.com</p>
-        <p class="footer__text">Celular: +123 456 7890</p>
-        <p class="footer__text">Dirección: 123 Calle Nombre, Ciudad</p>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p class="footer__copyright">
-        &copy; 2024 Magno. All Rights Reserved.
-      </p>
-    </div>
-  </footer>
+        </section>
 
-
+    <footer id="contacto" class="footer">
+        <div class="footer__container">
+            <div class="footer__section">
+            <h3 class="footer__title">Sobre Nosotros</h3>
+            <p class="footer__text">Dedicados a satisfacer la necesidad del cliente.</p>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Quick Links</h3>
+                <ul class="footer__links">
+                    <li><a href="#home" class="footer__link">Inicio</a></li>
+                    <li><a href="#" class="footer__link">Servicios</a></li>
+                    <li><a href="#contacto" class="footer__link">Contacto</a></li>
+                    <li><a href="#" class="footer__link">Politicas de Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Contacto</h3>
+                <p class="footer__text">Email: info@ejemplo.com</p>
+                <p class="footer__text">Celular: +123 456 7890</p>
+                <p class="footer__text">Dirección: 123 Calle Nombre, Ciudad</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright">&copy; 2024 Magno. All Rights Reserved.</p>
+        </div>
+    </footer>
 </main>
 
 <script src="script.js"></script>
