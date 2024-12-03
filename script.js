@@ -129,25 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const loader = document.getElementById("loader");
-  const mainContent = document.getElementById("main-content");
-
-  // Espera a que se cargue todo el contenido
-  window.addEventListener("load", function () {
-    // Muestra el loader por 3 segundos
-    setTimeout(() => {
-      // Agrega la clase para desvanecer el loader
-      loader.classList.add("fade-out");
-      // Muestra el contenido principal
-      mainContent.style.display = "block";
-
-      // Después de que termine la animación, elimina el loader
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 500); // Este tiempo debe coincidir con la duración de la transición en CSS
-    }, 200); // Ajusta este tiempo según lo que desees mostrar la animación
-  });
-
   const heroImage = document.querySelector(".hero-image img");
 
   if (heroImage) {
@@ -177,4 +158,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Llama la función al cargar la página por si alguna sección ya está visible
   document.addEventListener("DOMContentLoaded", checkVisibility);
+
+  // TARJETAS
+
+  const { ScrollObserver, valueAtPercentage } = aat;
+
+  const cardsContainer = document.querySelector(".cards");
+  const cards = document.querySelectorAll(".card");
+  cardsContainer.style.setProperty("--cards-count", cards.length);
+  cardsContainer.style.setProperty(
+    "--card-height",
+    `${cards[0].clientHeight}px`
+  );
+  Array.from(cards).forEach((card, index) => {
+    const offsetTop = 20 + index * 20;
+    card.style.paddingTop = `${offsetTop}px`;
+    if (index === cards.length - 1) {
+      return;
+    }
+    const toScale = 1 - (cards.length - 1 - index) * 0.1;
+    const nextCard = cards[index + 1];
+    const cardInner = card.querySelector(".card__inner");
+    ScrollObserver.Element(nextCard, {
+      offsetTop,
+      offsetBottom: window.innerHeight - card.clientHeight,
+    }).onScroll(({ percentageY }) => {
+      cardInner.style.scale = valueAtPercentage({
+        from: 1,
+        to: toScale,
+        percentage: percentageY,
+      });
+      cardInner.style.filter = `brightness(${valueAtPercentage({
+        from: 1,
+        to: 0.6,
+        percentage: percentageY,
+      })})`;
+    });
+  });
 });
