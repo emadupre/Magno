@@ -7,14 +7,6 @@
   --color-white: #ffffff;
 }
 
-/* Then you can use it in your CSS like this */
-.logo-magno {
-  font-family: "Mosk Ultra-Bold", sans-serif;
-}
-
-.logo-capital {
-  font-family: "Mosk Extra-Bold", sans-serif;
-}
 
 * {
   margin: 0;
@@ -23,6 +15,7 @@
 }
 
 body {
+  background-color: whitesmoke;
   font-family: system-ui, -apple-system, sans-serif;
   color: var(--color-text);
   line-height: 1.5;
@@ -183,11 +176,30 @@ h1:hover {
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* Necesario para el pseudoelemento */
+  overflow: hidden; /* Evita que el pseudoelemento salga del botón */
+}
+
+.primary-btn::after {
+  content: ">";
+  color: var(--color-white);
+  position: absolute;
+  opacity: 0;
+  right: 1rem; /* Posición inicial fuera de vista */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  transition: opacity 0.3s, right 0.3s; /* Suavidad de movimiento */
 }
 
 .primary-btn:hover {
   background-color: var(--color-accent-dark);
   transform: translateY(-5px);
+}
+
+.primary-btn:hover::after {
+  opacity: 1;
+  right: 0.5rem; /* Desplaza la flecha suavemente hacia adentro */
 }
 
 .hero-image {
@@ -789,4 +801,317 @@ h1:hover {
   .card__content {
     padding: 30px 20px;
   }
+}
+
+
+
+.che_contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.che_tarjeta {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.che_tarjeta.che_mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.che_tarjeta-grande {
+  grid-column: span 2;
+}
+
+h2 {
+  color: #75AADB;
+  margin-top: 0;
+}
+
+h3 {
+  color: #6b7280;
+  margin-top: 0;
+  font-size: 0.9em;
+}
+
+ul {
+  padding-left: 20px;
+  color: #6b7280;
+}
+
+.che_movimiento {
+  margin-bottom: 10px;
+}
+
+.che_confirmado {
+  font-size: 0.8em;
+  color: #6b7280;
+}
+
+.che_monto {
+  font-weight: bold;
+}
+
+.che_positivo {
+  color: #45B39D;
+}
+
+.che_negativo {
+  color: #E74C3C;
+}
+
+.che_inversion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.che_info-inversion {
+  display: flex;
+  align-items: center;
+}
+
+.che_icono-inversion {
+  width: 40px;
+  height: 40px;
+  background-color: #F1C40F;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.che_nombre-inversion {
+  font-weight: bold;
+  margin: 0;
+}
+
+.che_clase-inversion {
+  color: #6b7280;
+  font-size: 0.8em;
+  margin: 0;
+}
+
+.che_rendimiento {
+  text-align: right;
+}
+
+.che_riesgo {
+  color: #E67E22;
+  font-weight: bold;
+  margin: 0;
+}
+
+.che_retorno {
+  color: #27AE60;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+@keyframes che_flotar {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+.che_tarjeta-flotante {
+  animation: che_flotar 10s cubic-bezier(0.41, 0.01, 0.45, 1) infinite;
+  transition: all 0.3s ease-out;
+}
+
+.che_tarjeta-flotante:nth-child(2) { animation-delay: 0.7s; }
+.che_tarjeta-flotante:nth-child(3) { animation-delay: 1.4s; }
+.che_tarjeta-flotante:nth-child(4) { animation-delay: 2.1s; }
+.che_tarjeta-flotante:nth-child(5) { animation-delay: 2.8s; }
+
+@media (max-width: 768px) {
+  .che_tarjeta-grande {
+      grid-column: span 1;
+  }
+}
+
+
+
+.che_carousel-container {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(to right, #f0f4ff, #ffffff);
+  padding: 40px 0;
+}
+
+.che_carousel-track {
+  display: flex;
+  width: calc(300px * 6); /* Ancho total de todos los items */
+  animation: che_scroll 7s linear infinite;
+}
+
+.che_carousel-item {
+  flex: 0 0 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+.che_numero {
+  display: block;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #0066FF;
+  margin-bottom: 10px;
+}
+
+.che_descripcion {
+  font-size: 1.5rem;
+  color: #0066FF;
+  margin: 0;
+}
+
+@keyframes che_scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(calc(-300px * 3)); /* La mitad del ancho total */
+  }
+}
+
+/* Pausar la animación cuando el usuario pasa el mouse por encima */
+.che_carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .che_carousel-item {
+      flex: 0 0 250px;
+  }
+  
+  .che_carousel-track {
+      width: calc(250px * 6);
+  }
+  
+  @keyframes che_scroll {
+      0% {
+          transform: translateX(0);
+      }
+      100% {
+          transform: translateX(calc(-250px * 3));
+      }
+  }
+  
+  .che_numero {
+      font-size: 2.5rem;
+  }
+  
+  .che_descripcion {
+      font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.custom-footer {
+  background-color: white;
+  border-radius: 1rem; /* Bordes redondeados */
+  width: 80%;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Estilo para los links principales */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Espaciado entre los enlaces */
+  margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+  font-size: 1rem;
+  color: #002b5c;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Redes sociales */
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Espaciado uniforme entre íconos */
+  margin-bottom: 1.5rem;
+}
+
+.social-media a {
+  font-size: 1.8rem;
+  color: #002b5c;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  color: #0056b3;
+}
+
+.footer-info {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 1.5rem 0;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.legal-links {
+  display: flex;
+  gap: 0.5rem; /* Separación entre los enlaces */
+}
+
+.legal-links a {
+  color: #002b5c;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
 }

@@ -195,4 +195,32 @@ document.addEventListener("DOMContentLoaded", function () {
       })})`;
     });
   });
+
+  const tarjetas = document.querySelectorAll('.che_tarjeta-flotante');
+    
+    const observador = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('che_mostrar');
+                observador.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    tarjetas.forEach(tarjeta => {
+        observador.observe(tarjeta);
+    });
+
+    const track = document.querySelector('.che_carousel-track');
+    
+    // Función para reiniciar la animación cuando sea necesario
+    const resetAnimation = () => {
+        track.style.animation = 'none';
+        track.offsetHeight; // Trigger reflow
+        track.style.animation = null;
+    };
+
+    // Reiniciar la animación cuando termine
+    track.addEventListener('animationend', resetAnimation);
+
 });
