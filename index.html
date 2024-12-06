@@ -25,6 +25,24 @@
     </style>
   </head>
   <body>
+    <header id="main-header" class="header">
+      <a href="#" class="logo">
+        <img
+          src="src/LOGO-HORIZONTAL-PNG-A-COLOR.png"
+          id="main-logo"
+          width="150px"
+          alt=""
+        />
+      </a>
+      <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+    <!--
     <nav class="navbar">
       <div class="navbar-container">
         <div class="navbar-left">
@@ -48,20 +66,19 @@
           <span></span>
         </button>
       </div>
-    </nav>
+    </nav>-->
 
     <main>
       <section id="home" class="hero">
         <div class="hero-container">
           <div class="hero-content">
             <h1>
-              Soluciones financieras del <span class="highlight">futuro</span>
+              Soluciones financieras del futuro
             </h1>
             <p class="hero-text">
-              Servicios <span class="brand">financieros</span> innovadores para
-              tus necesidades.
-              <br />
-              Cambio de divisas, criptomonedas y más.
+              En <span>Magno Capital</span>
+              te ofrecemos todos estos servicios financieros a la mejor tasa del
+              mercado.
             </p>
             <p class="hero-tagline">FÁCIL, INCLUSIVO Y SEGURO.</p>
             <div class="hero-cta">
@@ -77,6 +94,10 @@
             />
           </div>
         </div>
+      </section>
+
+      <section class="b">
+        <h1 class="texto">Fácil, inclusivo y seguro</h1>
       </section>
 
       <section id="nosotros" class="about-section">
@@ -113,6 +134,75 @@
           </div>
         </div>
       </section>
+
+      <section>
+        <div class="space space--small"></div>
+        <div class="cards">
+          <div class="card" data-index="0">
+            <div class="card__inner">
+              <div class="card__image-container">
+                <img class="card__image" src="src/mision.jpeg" alt="" />
+              </div>
+              <div class="card__content">
+                <h1 class="card__title">Misión</h1>
+                <p class="card__description">
+                  En Magno creemos que invertir es para todos por eso ofrecemos
+                  una experiencia 100% digital, fácil y segura para que todos
+                  puedan realizar sus inversiones, proteger sus ahorros, hacer
+                  crecer su patrimonio y lograr la libertad financiera que se
+                  merecen.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-index="0">
+            <div class="card__inner">
+              <div class="card__image-container">
+                <img class="card__image" src="src/educacion.jpg" alt="" />
+              </div>
+              <div class="card__content">
+                <h1 class="card__title">Educación primero</h1>
+                <p class="card__description">
+                  Fomentamos la educación financiera a través de contenido
+                  gratuito y relevante para que nadie se quede afuera.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-index="0">
+            <div class="card__inner">
+              <div class="card__image-container">
+                <img class="card__image" src="src/finanzas.jpg" alt="" />
+              </div>
+              <div class="card__content">
+                <h1 class="card__title">Libertad financiera</h1>
+                <p class="card__description">
+                  Vinimos a romper con el status-quo persiguiendo nuestro sueño
+                  de agrandar el mercado de capitales y democratizar el acceso
+                  al mundo de las inversiones para cada uno.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-index="0">
+            <div class="card__inner">
+              <div class="card__image-container">
+                <img class="card__image" src="src/equipo.jpg" alt="" />
+              </div>
+              <div class="card__content">
+                <h1 class="card__title">Equipo</h1>
+                <p class="card__description">
+                  Trabajando con un equipo de primera línea, compuesto por los
+                  mejores profesionales en su ámbito de aplicación y poniendo
+                  siempre al consumidor en el centro.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="space"></div>
+      </section>
+
       <section class="why-section">
         <!-- Por qué hacemos part -->
         <div class="mission-container">
@@ -125,75 +215,71 @@
             puedan acceder al mercado de capitales.
           </p>
         </div>
-        
+
         <section id="fondos">
           <div class="che_contenedor">
-          <div class="che_tarjeta che_tarjeta-flotante che_tarjeta-grande">
-            <h2>Fácil</h2>
-            <p>
-              Te ofrecemos una plataforma 100% digital y para que todos
-              puedan entrar.
-            </p>
-            <ul>
-              <li>Comprá/Vendé dólar mep de una!</li>
-              <li>Inversiones al toque</li>
-              <li>Info actualizada</li>
-            </ul>
-          </div>
-          <div class="che_tarjeta che_tarjeta-flotante">
-            <h3>ESTA SEMANA</h3>
-            <div class="che_movimiento">
-              <p>Entró <span class="che_confirmado">Confirmado</span></p>
-              <p class="che_monto che_positivo">+ $250.000,00</p>
+            <div class="che_tarjeta che_tarjeta-flotante che_tarjeta-grande">
+              <h2>Fácil</h2>
+              <p>
+                Te ofrecemos una plataforma 100% digital y para que todos puedan
+                entrar.
+              </p>
+              <ul>
+                <li>Comprá/Vendé dólar mep de una!</li>
+                <li>Inversiones al toque</li>
+                <li>Info actualizada</li>
+              </ul>
             </div>
-            <div class="che_movimiento">
-              <p>Salió <span class="che_confirmado">Confirmado</span></p>
-              <p class="che_monto che_negativo">- $250,00</p>
+            <div class="che_tarjeta che_tarjeta-flotante">
+              <h3>ESTA SEMANA</h3>
+              <div class="che_movimiento">
+                <p>Entró <span class="che_confirmado">Confirmado</span></p>
+                <p class="che_monto che_positivo">+ $250.000,00</p>
+              </div>
+              <div class="che_movimiento">
+                <p>Salió <span class="che_confirmado">Confirmado</span></p>
+                <p class="che_monto che_negativo">- $250,00</p>
+              </div>
             </div>
-          </div>
-          <div class="che_tarjeta che_tarjeta-flotante">
-            <h2>Seguro</h2>
-            <p>La seguridad es lo más para Magno.</p>
-            <ul>
-              <li>
-                Tus inversiones están protegidas
-              </li>
-              <li>Entrá con tu cara y listo, más seguro</li>
-            </ul>
-          </div>
-          <div class="che_tarjeta che_tarjeta-flotante che_tarjeta-grande">
-            <h2>Para Todos</h2>
-            <p>
-              Creemos que invertir es para todos. Le metemos
-              educación y tecnología para que todos la tengan clara.
-            </p>
-            <ul>
-              <li>Educación disponible como el fútbol en la tele</li>
-              <li>
-                Le damos a la tecnología para darte el mejor servicio
-              </li>
-            </ul>
-          </div>
-          <div class="che_tarjeta che_tarjeta-flotante">
-            <div class="che_inversion">
-              <div class="che_info-inversion">
-                <div class="che_icono-inversion"></div>
-                <div>
-                  <p class="che_nombre-inversion">Allaria Ahorro</p>
-                  <p class="che_clase-inversion">Clase A</p>
+            <div class="che_tarjeta che_tarjeta-flotante">
+              <h2>Seguro</h2>
+              <p>La seguridad es lo más para Magno.</p>
+              <ul>
+                <li>Tus inversiones están protegidas</li>
+                <li>Entrá con tu cara y listo, más seguro</li>
+              </ul>
+            </div>
+            <div class="che_tarjeta che_tarjeta-flotante che_tarjeta-grande">
+              <h2>Para Todos</h2>
+              <p>
+                Creemos que invertir es para todos. Le metemos educación y
+                tecnología para que todos la tengan clara.
+              </p>
+              <ul>
+                <li>Educación disponible como el fútbol en la tele</li>
+                <li>Le damos a la tecnología para darte el mejor servicio</li>
+              </ul>
+            </div>
+            <div class="che_tarjeta che_tarjeta-flotante">
+              <div class="che_inversion">
+                <div class="che_info-inversion">
+                  <div class="che_icono-inversion"></div>
+                  <div>
+                    <p class="che_nombre-inversion">Allaria Ahorro</p>
+                    <p class="che_clase-inversion">Clase A</p>
+                  </div>
+                </div>
+                <div class="che_rendimiento">
+                  <p class="che_riesgo">Alto como el Aconcagua</p>
+                  <p class="che_retorno">+70,3%</p>
                 </div>
               </div>
-              <div class="che_rendimiento">
-                <p class="che_riesgo">Alto como el Aconcagua</p>
-                <p class="che_retorno">+70,3%</p>
-              </div>
             </div>
           </div>
-        </div>
+        </section>
       </section>
-    </section>
-      
-    <section id="carousel-numeros">
+
+      <section id="carousel-numeros">
         <div class="che_carousel-container">
           <div class="che_carousel-track">
             <!-- Primer conjunto de elementos -->
@@ -213,7 +299,7 @@
               <span class="che_numero">+120</span>
               <p class="che_descripcion">Empleados trabajando con nosotros</p>
             </div>
-  
+
             <!-- Duplicado para el scroll infinito -->
             <div class="che_carousel-item">
               <span class="che_numero">+16</span>
@@ -233,76 +319,8 @@
             </div>
           </div>
         </div>
-    </section>
+      </section>
 
-    <section>
-      <div class="space space--small"></div>
-      <div class="cards">
-        <div class="card" data-index="0">
-          <div class="card__inner">
-            <div class="card__image-container">
-              <img class="card__image" src="src/mision.jpeg" alt="" />
-            </div>
-            <div class="card__content">
-              <h1 class="card__title">Misión</h1>
-              <p class="card__description">
-                En Magno creemos que invertir es para todos por eso ofrecemos
-                una experiencia 100% digital, fácil y segura para que todos
-                puedan realizar sus inversiones, proteger sus ahorros, hacer
-                crecer su patrimonio y lograr la libertad financiera que se
-                merecen.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="card" data-index="0">
-          <div class="card__inner">
-            <div class="card__image-container">
-              <img class="card__image" src="src/educacion.jpg" alt="" />
-            </div>
-            <div class="card__content">
-              <h1 class="card__title">Educación primero</h1>
-              <p class="card__description">
-                Fomentamos la educación financiera a través de contenido
-                gratuito y relevante para que nadie se quede afuera.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="card" data-index="0">
-          <div class="card__inner">
-            <div class="card__image-container">
-              <img class="card__image" src="src/finanzas.jpg" alt="" />
-            </div>
-            <div class="card__content">
-              <h1 class="card__title">Libertad financiera</h1>
-              <p class="card__description">
-                Vinimos a romper con el status-quo persiguiendo nuestro sueño de
-                agrandar el mercado de capitales y democratizar el acceso al
-                mundo de las inversiones para cada uno.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="card" data-index="0">
-          <div class="card__inner">
-            <div class="card__image-container">
-              <img class="card__image" src="src/equipo.jpg" alt="" />
-            </div>
-            <div class="card__content">
-              <h1 class="card__title">Equipo</h1>
-              <p class="card__description">
-                Trabajando con un equipo de primera línea, compuesto por los
-                mejores profesionales en su ámbito de aplicación y poniendo
-                siempre al consumidor en el centro.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="space"></div>
-    </section>
-      
       <section class="creative-cards style-one">
         <div class="container">
           <div class="row">
@@ -359,7 +377,7 @@
           </div>
         </div>
       </section>
-<!--
+      <!--
       <footer id="contacto" class="footer">
         <div class="footer__container">
           <div class="footer__section">
@@ -410,7 +428,7 @@
             <a href="#">Fondos</a>
             <a href="#">Ayuda</a>
           </div>
-          
+
           <div class="social-media">
             <a href="#" aria-label="Twitch">🔵</a>
             <a href="#" aria-label="TikTok">⚫</a>
@@ -420,7 +438,10 @@
             <a href="#" aria-label="LinkedIn">🔗</a>
           </div>
           <div class="footer-info">
-            <p>Calle Falsa 123, Av. Siempre Viva, Provincia de Buenos Aires. · Magno Capital Servicios Digitales S.A.</p>
+            <p>
+              Calle Falsa 123, Av. Siempre Viva, Provincia de Buenos Aires. ·
+              Magno Capital Servicios Digitales S.A.
+            </p>
           </div>
           <hr />
           <div class="footer-bottom">
@@ -436,6 +457,8 @@
     </main>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/aatjs/dist/aat.min.js"></script>
   </body>
 </html>

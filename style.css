@@ -7,6 +7,22 @@
   --color-white: #ffffff;
 }
 
+@font-face {
+  font-family: "Mosk Ultra-Bold";
+  src: url("fonts/Mosk\ Ultra-Bold\ 900.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mosk Extra-Bold";
+  src: url("fonts/Mosk\ Extra-Bold\ 800.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 * {
   margin: 0;
@@ -23,6 +39,65 @@ body {
 
 /* Navbar styles */
 
+.header {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header:hover::before {
+  left: 100%;
+}
+.logo {
+  cursor: pointer;
+}
+
+.navbar a {
+  font-family: "Mosk Medium 700", system-ui, -apple-system, sans-serif;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  text-decoration: none;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+.navbar a:hover {
+  color: var(--color-primary);
+}
+
+.header.scroll {
+  margin: 20px;
+  padding: 10px 50px;
+  border-radius: 50px;
+  width: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.863);
+  -webkit-backdrop-filter: blur(1.4px);
+  border-bottom: none;
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(151, 149, 149, 0.483);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo reducido */
+.header.scroll .logo img {
+  width: 50px;
+  transition: width 0.3s ease-in-out;
+}
+
+/*
 .navbar {
   margin: 20px;
   position: fixed;
@@ -73,7 +148,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 50px;
-  overflow: hidden; /* Evitar desbordes */
+  overflow: hidden; /* Evitar desbordes 
 }
 
 .logo img.hidden {
@@ -85,8 +160,8 @@ body {
   height: 100%;
   width: auto;
   object-fit: contain;
-  transition: opacity 0.4s ease, transform 0.4s ease; /* Transiciones suaves */
-}
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Transiciones suaves 
+}*/
 
 .nav-links {
   display: none;
@@ -112,7 +187,7 @@ body {
   .nav-links a:hover {
     color: var(--color-accent);
   }
-}
+}*/
 
 /* Hero section styles */
 .hero {
@@ -149,6 +224,8 @@ h1:hover {
 }
 
 .hero-text {
+  color: var(--color-text);
+  font-weight: 300;
   margin-top: 1.5rem;
   font-size: 2rem;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
@@ -244,6 +321,7 @@ h1:hover {
   }
 
   h1 {
+    font-weight: 200;
     font-size: 3.75rem;
   }
 
@@ -293,6 +371,21 @@ h1:hover {
     opacity: 1;
   }
 }
+
+.b {
+  padding: 3rem;
+  height: 500px;
+  display: flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.texto {
+  font-size: 10rem;
+  color: var(--color-primary-dark);
+ }
 
 .about-section {
   padding: 6rem 1rem;
