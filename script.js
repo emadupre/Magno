@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile menu functionality
+  gsap.registerPlugin(ScrollTrigger);
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.querySelector(".nav-links");
 
@@ -215,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Reiniciar la animación cuando termine
   track.addEventListener("animationend", resetAnimation);
 
-  gsap.registerPlugin(ScrollTrigger);
+  
 
   // Seleccionar los elementos
   const horizontalElement = document.querySelector(".horizontal");
@@ -233,4 +234,48 @@ document.addEventListener("DOMContentLoaded", function () {
       pin: true, // Fija el contenedor mientras dura la animación
     },
   });
+
+  //TELEFONO 3D
+
+  
+  const envoltorio = document.querySelector(".envoltorio");
+  const contenedor = document.querySelector(".contenedor");
+  const telefono = document.querySelector('.telefono');
+  const imagenTelefono = document.querySelector('.imagen-telefono');
+
+  function moverPosicion(e) {
+      let pos = {
+          x: (e.pageX - window.innerWidth / 2) / 10,
+          y: -(e.pageY - window.innerHeight / 2) / 10
+      };
+
+      telefono.style.transform = `translate(-50%, -50%) rotatey(${pos.x / 4}deg) rotatex(${pos.y / 3}deg)`;
+
+      contenedor.style.left = `${-(pos.x / 60)}px`;
+      contenedor.style.top = `${pos.y / 90}px`;
+      contenedor.style.transform = `translate(${-(pos.x / 6)}%`;
+  }
+
+  document.addEventListener('mousemove', moverPosicion);
+
+  gsap.to(telefono, {
+      rotationY: 360,
+      scrollTrigger: {
+          trigger: telefono,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+      }
+  });
+
+  gsap.to(imagenTelefono, {
+      y: 10,
+      scrollTrigger: {
+          trigger: imagenTelefono,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+      }
+  });
+
 });
