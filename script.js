@@ -2,19 +2,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // Mobile menu functionality
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.querySelector(".nav-links");
-  
-  const header = document.getElementById('main-header');
-  const logo = document.getElementById('main-logo');
+
+  const header = document.getElementById("main-header");
+  const logo = document.getElementById("main-logo");
 
   const defaultLogo = "src/LOGO-HORIZONTAL-PNG-A-COLOR.png";
   const scrolledLogo = "src/LOGO-SOLO-A-COLOR.png"; // Reemplaza con la ruta de tu logo sin palabras
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
-      header.classList.add('scroll');
+      header.classList.add("scroll");
       logo.src = scrolledLogo;
     } else {
-      header.classList.remove('scroll');
+      header.classList.remove("scroll");
       logo.src = defaultLogo;
     }
   });
@@ -217,16 +217,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  let tl = gsap.timeline({
+  // Seleccionar los elementos
+  const horizontalElement = document.querySelector(".horizontal");
+  const horizontalContainer = document.querySelector(".horizontal-container");
+
+  // Configurar la animación para el scroll horizontal
+  gsap.to(horizontalElement, {
+    xPercent: -100, // Mueve el texto de derecha a izquierda (100% de su ancho)
+    ease: "none",
     scrollTrigger: {
-      trigger: ".hero",
-      toggleActions: "play reset reset reset",
-      markers: false,
-      start: "top top",
-      end: () => document.querySelector(".about-section").offsetHeight / 2 + "center",
-      scrub: true,
+      trigger: horizontalContainer, // El contenedor de la animación
+      start: "top top", // Cuando el contenedor toca la parte superior del viewport
+      end: () => "+=" + horizontalElement.offsetWidth, // Hasta que todo el texto haya pasado
+      scrub: true, // Sincroniza con el scroll del usuario
+      pin: true, // Fija el contenedor mientras dura la animación
     },
   });
-
-  tl.from(".b", { x: "+50%" });
 });
