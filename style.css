@@ -357,6 +357,37 @@ h1:hover {
   }
 }
 
+/* INFO */
+
+#info {
+  display: flex;
+  background: #fff;
+  font-weight: lighter;
+  padding: .1rem .1rem;
+}
+
+#titulo-info{
+  display: block;
+  font-size: 4.5rem;
+  line-height: 5.5rem;
+  text-wrap: balance;
+  font-weight: 600;
+  text-align: center;
+}
+
+#info-descripcion{
+  font-size: 1.375rem;
+  line-height: 2rem;
+  text-wrap: balance;
+  box-sizing: border-box;
+  border: 0 solid;
+  display: block;
+  unicode-bidi: isolate;
+  text-align: center;
+}
+
+/*FIN DE INFO*/
+
 .horizontal-container {
   width: 100%;
   height: 100vh;
@@ -803,12 +834,16 @@ h1:hover {
 }
 
 .card__inner {
+  height: 576px;
+  padding: 3.5rem 1.25rem 2.5rem;
   will-change: transform;
   background: white;
-  border-radius: 14px;
+  border-radius: 60px;
   display: flex;
+  flex-direction: row;
+  align-items: stretch;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px hsla(265.3, 20%, 10%, 35%);
+  box-shadow: 0 25px 50px -12px hsla(265.3, 20%, 10%, 0.35);
   transform-origin: center top;
 }
 
@@ -832,6 +867,7 @@ h1:hover {
   height: 100%;
   object-fit: cover;
   aspect-ratio: 1;
+  border-radius: 50px;
 }
 
 .card__content {
@@ -840,17 +876,46 @@ h1:hover {
   flex-direction: column;
 }
 
+.card__list{
+  list-style: none; /* Elimina los puntos de la lista */
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.card__list li{
+  position: relative;
+  padding-left: 2rem; /* Espacio para el ícono */
+  margin-bottom: 0.5rem; /* Separación entre elementos */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.card__list li::before {
+  content: '✔'; /* Ícono de tilde */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.25rem; /* Tamaño del ícono */
+  color: #4CAF50; /* Color del tilde (verde) */
+}
+
 .card__title {
   padding: 0;
   margin: 0;
-  font-size: 60px;
+  font-size: 3.5rem;
+  line-height: 4.5rem;
   font-weight: 600;
   color: #16263a;
 }
 
 .card__description {
-  line-height: 1.4;
-  font-size: 24px;
+  display: block;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  margin-top: 1.5rem;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0 solid;
   color: #16263a;
 }
 
@@ -1197,95 +1262,3 @@ hr {
 
 
 /*TELEFONO 3D*/
-
-.envoltorio {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 260px;
-  height: 450px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform-style: preserve-3d;
-}
-.telefono {
-  border: 5px solid black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotatey(0deg) rotatex(0deg);
-  width: 260px;
-  height: 450px;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: -1px 1px 25px -2px rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-  transform-style: preserve-3d;
-}
-.telefono .sombra {
-  position: absolute;
-  width: 100%;
-  border-radius: 25px;
-  height: 100%;
-  box-shadow: inset 0px 0px 30px 2px rgba(255, 255, 255, 0.253);
-  z-index: 8;
-}
-.telefono .superior {
-  background: rgba(252, 252, 252, 0.082);
-  width: 150px;
-  height: 32px;
-  border-radius: 0px 0px 25px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9;
-}
-.telefono .contenedor {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 22px;
-  transform: translate(0%, 0%);
-}
-.imagen-telefono {
-  position: absolute;
-  object-fit:cover;
-  transform-style: preserve-3d;
-}
-.circulo {
-  border: 3px solid rgba(50, 50, 50, 1);
-  border-radius: 50%;
-  width: 2px;
-  height: 2px;
-  margin-right: -6px;
-}
-.linea {
-  border: 3px solid rgba(20, 20, 20, 1);
-  border-radius: 50px;
-  width: 55px;
-  margin-right: 10px;
-}
-.inicio {
-  border: 1px solid rgba(255, 255, 255, 0.285);
-  width: 31px;
-  height: 31px;
-  background: black;
-  border-radius: 50%;
-  position: absolute;
-  top: 94%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-}
-.contenedor img{
-  width: 160%;
-  height: auto;
-}

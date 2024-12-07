@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile menu functionality
   gsap.registerPlugin(ScrollTrigger);
-  const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-  const navLinks = document.querySelector(".nav-links");
 
   const header = document.getElementById("main-header");
   const logo = document.getElementById("main-logo");
@@ -20,54 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Close mobile menu on window resize
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 768) {
-      isMenuOpen = false;
-      navLinks.style.display = "";
-      navLinks.style.flexDirection = "";
-      navLinks.style.position = "";
-      navLinks.style.top = "";
-      navLinks.style.left = "";
-      navLinks.style.right = "";
-      navLinks.style.backgroundColor = "";
-      navLinks.style.padding = "";
-      navLinks.style.boxShadow = "";
-    }
-  });
-
-  // Navbar scroll effect
-  const navbar = document.querySelector(".navbar");
-  const navLogo = document.getElementById("nav-logo");
-  const horizontalLogo = "src/LOGO-HORIZONTAL-PNG-A-COLOR.png";
-  const soloLogo = "src/LOGO-SOLO-A-COLOR.png";
-
-  const handleScroll = () => {
-    const isScrolled = window.scrollY > 50;
-    const currentLogo = navLogo.getAttribute("src");
-
-    if (isScrolled) {
-      navbar.classList.add("scrolled");
-      if (currentLogo !== soloLogo) {
-        navLogo.classList.add("hidden");
-        setTimeout(() => {
-          navLogo.setAttribute("src", soloLogo);
-          navLogo.classList.remove("hidden");
-        }, 400);
-      }
-    } else {
-      navbar.classList.remove("scrolled");
-      if (currentLogo !== horizontalLogo) {
-        navLogo.classList.add("hidden");
-        setTimeout(() => {
-          navLogo.setAttribute("src", horizontalLogo);
-          navLogo.classList.remove("hidden");
-        }, 400);
-      }
-    }
-  };
-
-  window.addEventListener("scroll", handleScroll);
 
   // Scrolling cards functionality
   const options = {
