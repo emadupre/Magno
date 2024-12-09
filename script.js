@@ -4,17 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const header = document.getElementById("main-header");
   const logo = document.getElementById("main-logo");
-
-  const defaultLogo = "src/LOGO-HORIZONTAL-PNG-A-COLOR.png";
-  const scrolledLogo = "src/LOGO-SOLO-A-COLOR.png"; // Reemplaza con la ruta de tu logo sin palabras
-
+  
+  // Rutas corregidas
+  const defaultLogo = "./src/LOGO-HORIZONTAL-PNG-A-COLOR.png";
+  const scrolledLogo = "./src/LOGO-SOLO-A-COLOR.png";
+  
+  // Función para manejar el scroll
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       header.classList.add("scroll");
-      logo.src = scrolledLogo;
     } else {
       header.classList.remove("scroll");
-      logo.src = defaultLogo;
     }
   });
 
@@ -80,7 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".about-section"),
     document.querySelector(".creative-cards"),
     document.querySelector("#nosotros"),
+    document.querySelector(".tarjetas-container"),
     document.querySelector(".mission-container"),
+    document.querySelector(".tarjetas-accordion"),
+    document.querySelector("horizontal-container"),
   ];
 
   // Función para detectar cuando una sección está en el viewport
@@ -183,49 +186,6 @@ document.addEventListener("DOMContentLoaded", function () {
       scrub: true, // Sincroniza con el scroll del usuario
       pin: true, // Fija el contenedor mientras dura la animación
     },
-  });
-
-  //TELEFONO 3D
-
-  
-  const envoltorio = document.querySelector(".envoltorio");
-  const contenedor = document.querySelector(".contenedor");
-  const telefono = document.querySelector('.telefono');
-  const imagenTelefono = document.querySelector('.imagen-telefono');
-
-  function moverPosicion(e) {
-      let pos = {
-          x: (e.pageX - window.innerWidth / 2) / 10,
-          y: -(e.pageY - window.innerHeight / 2) / 10
-      };
-
-      telefono.style.transform = `translate(-50%, -50%) rotatey(${pos.x / 4}deg) rotatex(${pos.y / 3}deg)`;
-
-      contenedor.style.left = `${-(pos.x / 60)}px`;
-      contenedor.style.top = `${pos.y / 90}px`;
-      contenedor.style.transform = `translate(${-(pos.x / 6)}%`;
-  }
-
-  document.addEventListener('mousemove', moverPosicion);
-
-  gsap.to(telefono, {
-      rotationY: 360,
-      scrollTrigger: {
-          trigger: telefono,
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
-      }
-  });
-
-  gsap.to(imagenTelefono, {
-      y: 10,
-      scrollTrigger: {
-          trigger: imagenTelefono,
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
-      }
   });
 
 });
