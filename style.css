@@ -366,20 +366,20 @@ h1:hover {
 .horizontal-container {
   overflow: hidden;
   position: relative;
-  padding: 5%;
+  padding: 2%;
 }
 
 .horizontal {
   display: flex;
   white-space: nowrap;
-  gap: 50px;
+  gap: 10px;
 }
 
 .horizontal h1 {
   font-size: 14rem;
   color: var(--color-primary-dark);
   white-space: nowrap;
-  padding: 0 10%;
+  padding: 0 5%;
 }
 /* TARJETAS FLOTANTES */
 
