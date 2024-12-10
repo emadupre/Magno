@@ -1,8 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  const tiles = document.querySelectorAll(".tile");
+
+  if (tiles.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const tile = entry.target;
+
+          if (entry.isIntersecting) {
+            tile.classList.add("visible");
+            tile.classList.remove("hidden");
+          } else {
+            tile.classList.remove("visible");
+            tile.classList.add("hidden");
+          }
+        });
+      },
+      { threshold: 0.5 } // Ajusta el umbral según necesites
+    );
+
+    tiles.forEach((tile) => {
+      observer.observe(tile);
+    });
+  }
+
+
   const sections = [
-    document.querySelector(".about-section"),
-    document.querySelector(".creative-cards"),
-    document.querySelector("#nosotros"),
+    document.querySelector(".hubs"),
     document.querySelector(".mission-container"),
     document.querySelector(".tarjetas-accordion"),
     document.querySelector(".horizontal-container"),
