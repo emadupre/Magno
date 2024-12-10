@@ -1,14 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Mobile menu functionality
+  const sections = [
+    document.querySelector(".about-section"),
+    document.querySelector(".creative-cards"),
+    document.querySelector("#nosotros"),
+    document.querySelector(".mission-container"),
+    document.querySelector(".tarjetas-accordion"),
+    document.querySelector(".horizontal-container"),
+  ];
+
+  // Función para detectar cuando una sección está en el viewport
+  function checkVisibility() {
+    sections.forEach((section) => {
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+          section.classList.add("visible"); // Añade la clase para activar el fade-in
+        }
+      }
+    });
+  }
+  // Llama la función al hacer scroll
+  window.addEventListener("scroll", checkVisibility);
+
+  // Llama la función al cargar la página por si alguna sección ya está visible
+  checkVisibility();
+
   gsap.registerPlugin(ScrollTrigger);
 
   const header = document.getElementById("main-header");
   const logo = document.getElementById("main-logo");
-  
+
   // Rutas corregidas
   const defaultLogo = "./src/LOGO-HORIZONTAL-PNG-A-COLOR.png";
   const scrolledLogo = "./src/LOGO-SOLO-A-COLOR.png";
-  
+
   // Función para manejar el scroll
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
@@ -17,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
       header.classList.remove("scroll");
     }
   });
-
 
   // Scrolling cards functionality
   const options = {
@@ -75,33 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
     heroImage.classList.add("loaded");
   }
 
-  // Selecciona las secciones que quieres animar
-  const sections = [
-    document.querySelector(".about-section"),
-    document.querySelector(".creative-cards"),
-    document.querySelector("#nosotros"),
-    document.querySelector(".tarjetas-container"),
-    document.querySelector(".mission-container"),
-    document.querySelector(".tarjetas-accordion"),
-    document.querySelector("horizontal-container"),
-  ];
-
-  // Función para detectar cuando una sección está en el viewport
-  function checkVisibility() {
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        section.classList.add("visible"); // Añade la clase para activar el fade-in
-      }
-    });
-  }
-
-  // Llama la función al hacer scroll
-  window.addEventListener("scroll", checkVisibility);
-
-  // Llama la función al cargar la página por si alguna sección ya está visible
-  document.addEventListener("DOMContentLoaded", checkVisibility);
-
   // TARJETAS
 
   const { ScrollObserver, valueAtPercentage } = aat;
@@ -141,51 +138,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const tarjetas = document.querySelectorAll(".che_tarjeta-flotante");
 
-  const observador = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("che_mostrar");
-          observador.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+  if (tarjetas.length > 0) {
+    const observador = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("che_mostrar");
+            observador.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-  tarjetas.forEach((tarjeta) => {
-    observador.observe(tarjeta);
-  });
+    tarjetas.forEach((tarjeta) => {
+      observador.observe(tarjeta);
+    });
+  }
 
   const track = document.querySelector(".che_carousel-track");
 
-  // Función para reiniciar la animación cuando sea necesario
-  const resetAnimation = () => {
-    track.style.animation = "none";
-    track.offsetHeight; // Trigger reflow
-    track.style.animation = null;
-  };
+  if (track) {
+    // Función para reiniciar la animación cuando sea necesario
+    const resetAnimation = () => {
+      track.style.animation = "none";
+      track.offsetHeight; // Trigger reflow
+      track.style.animation = null;
+    };
 
-  // Reiniciar la animación cuando termine
-  track.addEventListener("animationend", resetAnimation);
-
-  
+    // Reiniciar la animación cuando termine
+    track.addEventListener("animationend", resetAnimation);
+  }
 
   // Seleccionar los elementos
   const horizontalElement = document.querySelector(".horizontal");
   const horizontalContainer = document.querySelector(".horizontal-container");
 
   // Configurar la animación para el scroll horizontal
-  gsap.to(horizontalElement, {
-    xPercent: -100, // Mueve el texto de derecha a izquierda (100% de su ancho)
-    ease: "none",
-    scrollTrigger: {
-      trigger: horizontalContainer, // El contenedor de la animación
-      start: "top top", // Cuando el contenedor toca la parte superior del viewport
-      end: () => "+=" + horizontalElement.offsetWidth, // Hasta que todo el texto haya pasado
-      scrub: true, // Sincroniza con el scroll del usuario
-      pin: true, // Fija el contenedor mientras dura la animación
-    },
-  });
-
+  if (horizontalElement && horizontalContainer) {
+    gsap.to(horizontalElement, {
+      xPercent: -100,
+      ease: "none",
+      scrollTrigger: {
+        trigger: horizontalContainer,
+        start: "top top",
+        end: () => "+=" + horizontalElement.offsetWidth,
+        scrub: true,
+        pin: true,
+      },
+    });
+  }
 });

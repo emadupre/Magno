@@ -7,6 +7,10 @@
   --color-white: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "Mosk Ultra-Bold";
   src: url("fonts/Mosk\ Ultra-Bold\ 900.ttf") format("truetype");
@@ -30,7 +34,12 @@
 }
 
 body {
-  background-color: #e3dac917;
+  background-color: #ffffff;
+  opacity: 1;
+  background-image: radial-gradient(#4f4f8a 1.5px, transparent 1.5px),
+    radial-gradient(#4f4f8a 1.5px, #ffffff 1.5px);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
   font-family: system-ui, -apple-system, sans-serif;
   color: var(--color-text);
   line-height: 1.5;
@@ -351,7 +360,7 @@ h1:hover {
 
 #info {
   display: flex;
-  background: #fff;
+  background: #ffffffd2;
   font-weight: lighter;
   padding: 0.1rem 0.1rem;
 }
@@ -379,12 +388,9 @@ h1:hover {
 /*FIN DE INFO*/
 
 .horizontal-container {
-  width: 100%;
-  height: 100vh;
   overflow: hidden;
   position: relative;
-  background-color: linear-gradient(to bottom, var(--color-white), #f7fafc);
-  padding: 20%;
+  padding: 5%;
 }
 
 .horizontal {
@@ -394,41 +400,64 @@ h1:hover {
 }
 
 .horizontal h1 {
-  font-size: 10rem;
+  font-size: 14rem;
   color: var(--color-primary-dark);
   white-space: nowrap;
-  padding: 0 30%;
+  padding: 0 10%;
 }
 /* TARJETAS FLOTANTES */
-.flotantes {
-  padding: 30px;
+
+.hubs {
+  margin: 50px;
+  height: 100vh;
+  overflow: hidden;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
 }
 
-.flotantes.visible {
-  opacity: 1; /* Hace que la sección sea visible */
-  transform: translateY(0); /* La sección regresa a su posición original */
-}
-
-.tarjetas-container {
+.hub {
+  scroll-snap-align: start;
   display: grid;
-  margin: 10px;
   grid-template-columns: 1.2fr 1fr 0.8fr;
   grid-template-rows: 1fr 1.1fr 0.9fr;
-  grid-auto-columns: 1fr;
-  gap: 0px 0px;
+  gap: 0;
   grid-auto-flow: row;
   grid-template-areas:
     "tarjeta-1 tarjeta-2 tarjeta-3"
     "tarjeta-4 tarjeta-5 tarjeta-6"
     "tarjeta-7 tarjeta-8 tarjeta-8";
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.tarjetas-container.visible {
-  opacity: 1; /* Hace que la sección sea visible */
-  transform: translateY(0); /* La sección regresa a su posición original */
+.tile h2{
+  font-size: 2.5rem;
+}
+
+.tile p{
+  font-size: 1.4rem;
+}
+
+.tile li{
+  font-size: 1.2rem;
+}
+
+.tarjeta-1-1,
+.tarjeta-2-1,
+.tarjeta-3-1,
+.tarjeta-4-1,
+.tarjeta-4-2,
+.tarjeta-5,
+.tarjeta-7-1{
+  margin: 10px;
+  padding: 20px;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.578);
+}
+
+.tarjeta-6-1,
+.tarjeta-6-2,.tarjeta-8 {
+  margin: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.578);
+  background-color: var(--color-white);
 }
 
 .tarjetas-container h2 {
@@ -452,20 +481,10 @@ h1:hover {
   grid-area: tarjeta-1;
 }
 
-.tarjeta-1-1,
-.tarjeta-2-1,
-.tarjeta-3-1,
-.tarjeta-4-1,
-.tarjeta-4-2,
-.tarjeta-5,
-.tarjeta-7-1 {
-  padding: 50px;
-}
-
 .tarjeta-1-1 {
   grid-area: tarjeta-1-1;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .tarjeta-2 {
@@ -480,14 +499,13 @@ h1:hover {
     "tarjeta-2-1 tarjeta-2-1 tarjeta-2-1";
   grid-area: tarjeta-2;
 }
-
 .tarjeta-2-1 {
   display: flex;
   justify-content: center;
   align-items: center;
   grid-area: tarjeta-2-1;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .tarjeta-2-1 img {
@@ -510,7 +528,7 @@ h1:hover {
 .tarjeta-3-1 {
   grid-area: tarjeta-3-1;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .tarjeta-4 {
@@ -529,7 +547,7 @@ h1:hover {
 .tarjeta-4-1 {
   grid-area: tarjeta-4-1;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .tarjeta-4-2 {
@@ -538,7 +556,7 @@ h1:hover {
   align-items: center;
   grid-area: tarjeta-4-2;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .tarjeta-4-2 img {
@@ -548,7 +566,7 @@ h1:hover {
 .tarjeta-5 {
   grid-area: tarjeta-5;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .tarjeta-6 {
@@ -566,13 +584,13 @@ h1:hover {
 .tarjeta-6-1 {
   grid-area: tarjeta-6-1;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .tarjeta-6-2 {
   grid-area: tarjeta-6-2;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .tarjeta-6-1,
@@ -602,7 +620,7 @@ h1:hover {
 .tarjeta-7-1 {
   grid-area: tarjeta-7-1;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .tarjeta-8 {
@@ -611,18 +629,43 @@ h1:hover {
   align-items: center;
   grid-area: tarjeta-8;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .tarjeta-8 img {
-  width: 200px;
+  width: 150px;
+}
+
+/* Animaciones y transiciones */
+.snapevents .tile {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.snapevents .seen .tile {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.snapevents .hidden .tile {
+  opacity: 0; /* Permanecer oculto */
+  pointer-events: none; /* Evita interacción */
+}
+.snapevents .seen .tile:nth-child(3) {
+  transition-delay: 400ms;
+}
+.snapevents .seen .tile:nth-child(4) {
+  transition-delay: 600ms;
+}
+.snapevents .seen .tile:nth-child(5) {
+  transition-delay: 800ms;
 }
 
 /* FIN TARJETAS FLOTANTES */
 
 .about-section {
   padding: 6rem 1rem;
-  background: #f5f0e8;
+  background: #ffffff6f;
   opacity: 0;
   transform: translateY(20px); /* La sección está ligeramente hacia abajo */
   transition: opacity 0.6s ease, transform 0.6s ease; /* Transición suave */
@@ -652,7 +695,7 @@ h1:hover {
 .about-title {
   font-family: "Mosk Ultra-Bold", sans-serif;
   font-size: 3.5rem;
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
   line-height: 1.2;
   margin-bottom: 1.5rem;
 }
@@ -673,12 +716,12 @@ h1:hover {
 }
 
 .image-small {
-  width: 150px;
-  height: 150px;
+  width: 340px;
+  height: 200px;
   object-fit: cover;
   border-radius: 1rem;
   position: absolute;
-  top: 0;
+  top: -42px;
   right: 75%;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -1044,7 +1087,7 @@ h1:hover {
 
 .card__inner {
   width: auto;
-  height: 576px;
+  height: auto;
   padding: 3.5rem 1.25rem 2.5rem;
   will-change: transform;
   background: white;
@@ -1074,7 +1117,7 @@ h1:hover {
 
 .card__image {
   width: 100%;
-  height: 100%;
+  height: 70%;
   object-fit: cover;
   aspect-ratio: 1;
   border-radius: 50px;
@@ -1243,8 +1286,13 @@ ul {
 .che_carousel-container {
   width: 100%;
   overflow: hidden;
-  background: linear-gradient(to right, #f0f4ff, #ffffff);
   padding: 40px 0;
+  background: rgba(255, 255, 255, 0.313);
+  -webkit-backdrop-filter: blur(2px);
+  border-bottom: none;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(231, 229, 229, 0.539);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .che_carousel-track {
@@ -1261,14 +1309,17 @@ ul {
 
 .che_numero {
   display: block;
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: bold;
   color: #0066ff;
   margin-bottom: 10px;
 }
 
 .che_descripcion {
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
   color: #0066ff;
   margin: 0;
 }
@@ -1280,11 +1331,6 @@ ul {
   100% {
     transform: translateX(calc(-300px * 3)); /* La mitad del ancho total */
   }
-}
-
-/* Pausar la animación cuando el usuario pasa el mouse por encima */
-.che_carousel-track:hover {
-  animation-play-state: paused;
 }
 
 /* Estilos responsivos */
@@ -1317,11 +1363,11 @@ ul {
 
 .custom-footer {
   background-color: white;
-  border-radius: 1rem; /* Bordes redondeados */
-  width: 80%;
+  border-radius: 20px; /* Bordes redondeados */
+  width: 50%;
   margin: 2rem auto;
-  padding: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 4rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.409);
   text-align: center;
 }
 
@@ -1348,19 +1394,14 @@ ul {
 /* Redes sociales */
 .social-media {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem; /* Espaciado uniforme entre íconos */
+  justify-content: space-evenly;
+  gap: 0rem; /* Espaciado uniforme entre íconos */
+  margin-top: 4rem;
   margin-bottom: 1.5rem;
 }
 
-.social-media a {
-  font-size: 1.8rem;
-  color: #002b5c;
-  text-decoration: none;
-}
-
 .iconos-svg {
-  width: 2.5vh;
+  width: 3vh;
   height: auto;
 }
 
@@ -1368,6 +1409,11 @@ ul {
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 1rem;
+}
+
+.logo-section img {
+  width: 30vh;
+  margin-bottom: 30px;
 }
 
 hr {
@@ -1378,7 +1424,8 @@ hr {
 
 .footer-bottom {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
 }
