@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTech Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Impulsa tu Negocio con <span>Tecnología Inteligente</span></h1>
+            <p>Transformamos empresas a través de soluciones digitales innovadoras y personalizadas</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">Explorar servicios</a>
+                <button class="btn btn-secondary">Contactar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <p class="section-description">Soluciones tecnológicas integrales para impulsar la transformación digital de tu empresa</p>
+            <div class="services-grid">
+                <!-- Services will be inserted by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Currency Exchange Section -->
+    <section id="exchange" class="exchange">
+        <div class="container">
+            <div class="exchange-calculator">
+                <h2>Cambio de Divisas</h2>
+                <div class="calculator-grid">
+                    <div class="calculator-inputs">
+                        <div class="input-group">
+                            <label for="amount">Monto</label>
+                            <input type="number" id="amount" placeholder="0.00">
+                        </div>
+                        <div class="currency-selectors">
+                            <div class="input-group">
+                                <label for="fromCurrency">De</label>
+                                <select id="fromCurrency">
+                                    <option value="USD">USD - Dólar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="GBP">GBP - Libra</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="toCurrency">A</label>
+                                <select id="toCurrency">
+                                    <option value="ARS">ARS - Pesos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="operation">Operación</label>
+                            <select id="operation">
+                                <option value="buy">Compra</option>
+                                <option value="sell">Venta</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="exchange-result">
+                        <h3>Resultado</h3>
+                        <div id="result-amount">$ 0.00</div>
+                        <div id="exchange-info"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Calculator Section -->
+    <section id="loans" class="loans">
+        <div class="container">
+            <div class="loan-calculator">
+                <h2>Calculadora de Préstamos</h2>
+                <div class="calculator-grid">
+                    <div class="calculator-inputs">
+                        <div class="input-group">
+                            <label for="loanAmount">Monto del préstamo</label>
+                            <input type="number" id="loanAmount" placeholder="10000">
+                        </div>
+                        <div class="input-group">
+                            <label for="loanTerm">Plazo (meses)</label>
+                            <select id="loanTerm">
+                                <option value="12">12 meses</option>
+                                <option value="24">24 meses</option>
+                                <option value="36">36 meses</option>
+                                <option value="48">48 meses</option>
+                                <option value="60">60 meses</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="interestRate">Tasa de interés anual (%)</label>
+                            <input type="number" id="interestRate" value="12">
+                        </div>
+                    </div>
+                    <div class="loan-result">
+                        <h3>Cuota Mensual Estimada</h3>
+                        <div id="monthly-payment">$ 0.00</div>
+                        <div id="loan-info"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Payments Section -->
+    <section id="international" class="international">
+        <div class="container">
+            <h2>Pagos Internacionales</h2>
+            <p class="section-description">Simplifica tus operaciones internacionales con nuestra plataforma de pagos global</p>
+            <div class="features-grid">
+                <!-- Features will be inserted by JavaScript -->
+            </div>
+            <div class="cta">
+                <button class="btn btn-primary">Comenzar Ahora</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Physical Locations Section -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <h2>Agencias de Cambio</h2>
+            <p class="section-description">Visita nuestras agencias físicas para realizar tus operaciones de cambio de manera segura</p>
+            <div class="locations-grid">
+                <!-- Locations will be inserted by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
