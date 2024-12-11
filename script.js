@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const track = document.querySelector(".che_carousel-track");
+  const track = document.querySelector(".carousel-track");
 
   if (track) {
     // Función para reiniciar la animación cuando sea necesario

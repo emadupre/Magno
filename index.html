@@ -5,24 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magno Capital - Invertir es para todos</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Mosk fonts -->
-    <style>
-      @font-face {
-        font-family: "Mosk Ultra-Bold";
-        src: url("fonts/Mosk\ Ultra-Bold\ 900.ttf") format("truetype");
-        font-weight: 900;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: "Mosk Extra-Bold";
-        src: url("fonts/Mosk\ Extra-Bold\ 800.ttf") format("truetype");
-        font-weight: 800;
-        font-style: normal;
-        font-display: swap;
-      }
-    </style>
   </head>
   <body>
     <header id="main-header" class="header">
@@ -136,7 +118,7 @@
                 </p>
               </div>
               <div class="card__image-container">
-                <img class="card__image" src="src/finanzas.jpg" alt="" />
+                <img class="card__image" src="src/finanzas.webp" alt="" />
               </div>
             </div>
           </div>
@@ -155,7 +137,7 @@
                 </p>
               </div>
               <div class="card__image-container">
-                <img class="card__image" src="src/equipo.jpg" alt="" />
+                <img class="card__image" src="src/equipo.webp" alt="" />
               </div>
             </div>
           </div>
@@ -172,92 +154,96 @@
       <section class="hubs">
         <div class="hub">
           <!-- Tarjetas distribuidas según las áreas del grid -->
-          <div class="tile tarjeta-1">
-            <div class="tile tarjeta-1-1">
+          <div class="tile lateral-izq"></div>
+          <div class="tile lateral-izq-2"></div>
+          <div class="tile lateral-izq-3"></div>
+            <div class="tile Facil">
                 <h2>Fácil</h2>
                 <p>
                   Te ofrecemos una plataforma 100% digital y para que todos puedan
                   entrar.
                 </p>
-                <ul class="card__list">
-                    <li>Comprá/Vendé dólar mep de una!</li>
-                    <li>Inversiones al toque</li>
-                    <li>Info actualizada</li>
-                </ul>
+                <li>Comprá/Vendé dólar mep de una!</li>
+                <li>Inversiones al toque</li>
+                <li>Info actualizada</li>
             </div>
-          </div>
             
-          <div class="tile tarjeta-2">
-            <!-- Subgrid dentro de la tarjeta 2 -->
-            <div class="tile tarjeta-2-1">
+            <div class="tile Escudo">
               <img id="imagenes-svg" src="src/escudo.svg" alt="Escudo Seguro">
             </div>
-          </div>
-          <div class="tile tarjeta-3">
-            <!-- Subgrid dentro de la tarjeta 3 -->
-            <div class="tile tarjeta-3-1">
-              <h2>
-                Simple y ágil
-              </h2>
-              <p>
-                Con Mango Capital, llevamos tus finanzas al siguiente nivel con una plataforma fácil de usar. <br>
-                <ul class="card__list">
-                  <li>Gestioná tus inversiones con datos actualizados.</li>
-                  <li>Operá dólar MEP sin complicaciones.</li>
-                </ul>
-              </p>
+            
+            <div class="tile Cuentas">
+              <img src="/src/security-fonds.webp" alt="Fondos">
             </div>
-          </div>
-          <div class="tile tarjeta-4">
-            <div class="tile tarjeta-4-1">
-              <h2>Esta semana</h2>
-            <div class="movimiento">
-              <p>Entró <span class="confirmado">Confirmado</span></p>
-              <p class="monto positivo">+ $250.000,00</p>
+
+            <div class="tile Movimientos">
+              <p class="titulo-mov">ESTA SEMANA</p>
+            <ul class="movimiento">
+              <li>
+                <div class="contenedor-movimiento">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M9.4349 13.9211L14.0686 18.5548M14.0686 18.5548L18.7023 13.9211M14.0686 18.5548V9.28744M25.6528 13.9211C25.6528 20.3189 20.4664 25.5053 14.0686 25.5053C7.6708 25.5053 2.48438 20.3189 2.48438 13.9211C2.48438 7.52334 7.6708 2.33691 14.0686 2.33691C20.4664 2.33691 25.6528 7.52334 25.6528 13.9211Z" stroke="#002C65" stroke-width="1.73763" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  <div class="movimiento">
+                    <p>Ingresó</p>
+                    <div class="confirmado">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.13759" cy="7.17372" r="4.63368" fill="#00C28F"></circle></svg>
+                      <p>
+                        Confirmado
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="historial">
+                  <p class="monto">
+                    <span class="positivo">+</span>$250.000,00
+                  </p>
+                  <p>11:43, Ayer</p>
+                </div>
+              </li>
+              <li>
+                <div class="contenedor-movimiento">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none"><path d="M18.7023 14.4264L14.0686 9.79269M14.0686 9.79269L9.4349 14.4264M14.0686 9.79269V19.06M25.6528 14.4264C25.6528 20.8241 20.4664 26.0106 14.0686 26.0106C7.6708 26.0106 2.48438 20.8241 2.48438 14.4264C2.48438 8.02859 7.6708 2.84216 14.0686 2.84216C20.4664 2.84216 25.6528 8.02859 25.6528 14.4264Z" stroke="#002C65" stroke-width="1.73763" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  <div class="movimiento">
+                    <p>Extracción</p>
+                    <div class="confirmado">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.13759" cy="7.17372" r="4.63368" fill="#00C28F"></circle></svg>
+                      <p>
+                        Confirmado
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="historial">
+                  <p class="monto">
+                    <span class="negativo">-</span>$250,00
+                  </p>
+                  <p>11:43, Ayer</p>
+                </div>
+              </li>
+            </ul>
             </div>
-            <div class="movimiento">
-              <p>Salió <span class="confirmado">Confirmado</span></p>
-              <p class="monto negativo">- $250,00</p>
-            </div>
-            </div>
-            <div class="tile tarjeta-4-2">
+            <div class="tile Cara">
               <img id="imagenes-svg" src="src/reconocimiento-facial.svg" alt="Reconocimiento Facial">
             </div>
-          </div> 
-          <div class="tile tarjeta-5">
+
+          <div class="tile Inclusivo">
             <h2>Para Todos</h2>
           <p>
             Creemos que invertir es para todos. Le metemos educación y
             tecnología para que todos la tengan clara.
           </p>
-          <ul class="card__list">
+          <br>
             <li>Educación disponible como el fútbol en la tele</li>
             <li>Le damos a la tecnología para darte el mejor servicio</li>
-          </ul>
           </div>
-          <div class="tile tarjeta-6">
-            <div class="tile tarjeta-6-1">
-              <img id="imagenes-svg" src="src/finance-mode.svg" alt="Modo Finanzas">
-            </div>
-            <div class="tile tarjeta-6-2">
-              <img id="imagenes-svg" src="src/plata.svg" alt="Plata">
-            </div>
+          <div class="tile Seguro">
+            <h2>Seguro</h2>
+            <p>La seguridad es lo más para Magno.</p>
+              <li>Tus inversiones están protegidas</li>
+              <li>Entrá con tu cara y listo, más seguro</li>
           </div>
-          <div class="tile tarjeta-7">
-            <div class="tile tarjeta-7-1">
-              <h2>Seguro</h2>
-              <p>La seguridad es lo más para Magno.</p>
-              <ul class="card__list">
-                <li>Tus inversiones están protegidas</li>
-                <li>Entrá con tu cara y listo, más seguro</li>
-              </ul>
-            </div>
-            <div class="tile tarjeta-7-2"></div>
-          </div>
-          <div class="tile tarjeta-8">
-            <img id="imagenes-svg" src="src/finanzas-svg.svg" alt="Finanzas">
-          </div>
-        </div>
+            <div class="tile lateral-derecho"></div>
+            <div class="tile lateral-derecho-2"></div>
+          <div class="tile lateral-derecho-3"></div>
       </section>
 
       <section id="carousel-numeros">
